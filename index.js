@@ -9,6 +9,7 @@ document.addEventListener('alpine:init', () => {
     showPass: false,
     errors: {},
     beltChoices: ['black', 'white', 'red', 'orange', 'brown'],
+    success: false,
 
     validateForm() {
       this.errors = {};
@@ -40,6 +41,7 @@ document.addEventListener('alpine:init', () => {
       if (!Object.keys(this.errors).length) {
         console.log(this.username, this.password, this.passwordConfirm, this.belt, this.bio, this.newsletter);
         $event.target.reset();
+        this.success = true;
       }
     },
   }));
