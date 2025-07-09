@@ -65,11 +65,9 @@
           <span>Belt Color:</span>
           <select x-model="belt">
             <option value="">Select a belt</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="brown">Brown</option>
+            <template x-for="(choice, index) in beltChoices" :key="choice">
+              <option :value="choice" x-text="choice.charAt(0).toUpperCase() + choice.slice(1)"></option>
+            </template>
           </select>
         </label>
 
