@@ -10,6 +10,24 @@ document.addEventListener('alpine:init', () => {
     errors: {},
     beltChoices: ['black', 'white', 'red', 'orange', 'brown'],
     success: false,
+    posts: [],
+    bg: 'red',
+
+    init() {
+      // do some action, e.g: fetch posts
+      setTimeout(() => {
+        this.posts = [
+          { id: 1, title: 'Post 1' },
+          { id: 2, title: 'Post 2' },
+          { id: 3, title: 'Post 3' },
+        ];
+      }, 500);
+
+      // watch data for changes
+      this.$watch('bg', (newbg, oldbg) => {
+        document.body.style.backgroundColor = newbg;
+      });
+    },
 
     validateForm() {
       this.errors = {};

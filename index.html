@@ -111,6 +111,21 @@
           <button type="button" @click="success = false">Close</button>
         </div>
       </div>
+
+      <br />
+      <br />
+      <hr />
+
+      <ul>
+        <template x-for="post in posts" :key="post.id">
+          <li x-text="post.title"></li>
+        </template>
+      </ul>
+
+      <div>
+        <h3>Change the Background:</h3>
+        <input type="text" x-model="bg" placeholder="Enter a bg color" />
+      </div>
     </form>
   </body>
 </html>
