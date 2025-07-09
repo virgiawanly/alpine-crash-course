@@ -10,8 +10,13 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <form x-data="signupForm">
+    <form x-data="signupForm" @submit.prevent="submitForm">
       <h1>Ninja Sign Up Form</h1>
+
+      <button type="button" x-on:click.shift="console.log('click')">click</button>
+      <button type="button" x-on:mouseleave.ctrl="console.log('mouseleave')">mouseleave</button>
+      <button type="button" x-on:dblclick="console.log('dblclick')">dblclick</button>
+      <input type="text" x-on:keyup="console.log('keyup')" />
 
       <!-- username -->
       <div class="form-field">
